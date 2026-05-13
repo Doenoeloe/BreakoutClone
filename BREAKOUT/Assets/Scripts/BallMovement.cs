@@ -14,8 +14,11 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         // Lanceer de bal met spatiebalk
+        Debug.Log("hallo" + launched);
         if (!launched && Input.GetKeyDown(KeyCode.Space))
+
         {
+            Debug.Log("spatie");
             Launch();
         }
     }
