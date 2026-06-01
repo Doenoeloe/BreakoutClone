@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 playerInput;
     Rigidbody2D rb;
 
-    float speed = 5;
+    [SerializeField] float speed = 5;
 
     private void Start()
     {
