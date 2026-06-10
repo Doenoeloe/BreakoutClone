@@ -1685,6 +1685,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1295205772}
   - component: {fileID: 1295205773}
+  - component: {fileID: 1295205774}
+  - component: {fileID: 1295205775}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -1825,6 +1827,41 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1295205774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295205771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308238e32f1cb52479e07b9da53a2109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoiceBreakout.VoiceInput
+  microphoneDevice: 
+  sampleWindowMs: 64
+  noiseFloor: 0.005
+  maxExpectedVolume: 0.3
+  smoothing: 0.15
+--- !u!114 &1295205775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295205771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb376b5bea233844ba624add527dc67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoiceBreakout.VoiceDirectionRecognizer
+  voiceInput: {fileID: 0}
+  voicePaddle: {fileID: 0}
+  volumeBar: {fileID: 0}
+  speedLabel: {fileID: 0}
+  barColor: {r: 0.2, g: 1, b: 0.4, a: 0.85}
+  bgColor: {r: 0, g: 0, b: 0, a: 0.55}
 --- !u!1 &1388437908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1875,7 @@ GameObject:
   - component: {fileID: 1388437911}
   - component: {fileID: 1388437912}
   - component: {fileID: 1388437913}
+  - component: {fileID: 1388437914}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1926,7 +1964,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388437908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c0f7c5cca3a9b46ac19656e8cb350e, type: 3}
   m_Name: 
@@ -2005,6 +2043,49 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1388437914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388437908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e008b64757f4534f974f9fc756fc4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoiceBreakout.VoicePaddle
+  voiceInput: {fileID: 0}
+  maxSpeed: 50
+  minSpeed: 1
+  allowKeyboard: 1
+  allowPointer: 0
+  leftBound: -8
+  rightBound: 8
+  volumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.51627326
+      value: -0.0019516982
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.0568542
+      value: 0.48948288
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1482589794
 GameObject:
   m_ObjectHideFlags: 0
